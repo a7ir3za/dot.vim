@@ -1,6 +1,9 @@
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
+[submodule "pack/plugins/start/ctrlp"]
+	path = pack/plugins/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "pack/plugins/start/vim-go"]
-	path = pack/plugins/start/vim-go
+[submodule "pack/plugins/start/go"]
+	path = pack/plugins/start/go
 	url = https://github.com/fatih/vim-go.git
+[submodule "pack/plugins/start/fugitive"]
+	path = pack/plugins/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
