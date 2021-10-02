@@ -12,6 +12,8 @@ let g:netrw_liststyle=3
 let g:netrw_banner=1
 let g:netrw_browse_split=0
 let g:netrw_winsize=15
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 autocmd FileType go nmap <Leader>b <Plug>(go-build)
 autocmd FileType go nmap <Leader>r <Plug>(go-run)
@@ -47,8 +49,6 @@ function! SLGit()
   let l:branchname = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
   return strlen(l:branchname) > 0?' '.l:branchname.' ':''
 endfunction
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 colorscheme desert
 autocmd bufwritepost .vimrc source $MYVIMRC
