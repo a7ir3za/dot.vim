@@ -43,8 +43,6 @@ set statusline+=%{&spell?'\ SPELL\ ':''}
 set statusline+=%#CursorIM#
 set statusline+=%R              " readonly flag
 set statusline+=%M              " modified [+] flag
-set statusline+=%#Visual#%{SLGit()}
-set statusline+=%#Cursor#
 set statusline+=%#CursorLine#
 set statusline+=\ %t\           " short file name
 set statusline+=\ %3l:%-2c\     " line + column
@@ -54,9 +52,4 @@ set statusline+=\ %Y\           " file type
 set statusline+=%#CursorIM#
 set statusline+=%#Cursor#
 set statusline+=\ %3p%%\        " percentage
-
-function! SLGit()
-  let l:branchname = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-  return strlen(l:branchname) > 0?' '.l:branchname.' ':''
-endfunction
 
