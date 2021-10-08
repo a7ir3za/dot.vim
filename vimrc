@@ -5,6 +5,7 @@ set encoding=utf-8
 set clipboard=unnamed
 syntax on
 set number
+set nowrapscan
 set listchars=eol:$,space:.,tab:»-
 nmap § :set list!<CR>
 filetype indent plugin on
