@@ -11,15 +11,19 @@ nmap § :set list!<CR>
 filetype indent plugin on
 set hidden
 command! -nargs=* Wrap set wrap linebreak nolist
+set foldcolumn=4
 
 colorscheme desert
 autocmd bufwritepost .vimrc source $MYVIMRC
+
+autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd FileType Python setlocal ts=4 sts=4 sw=4 expandtab
 
 " Plugins {{{1
 " NetRW {{{2
 let g:netrw_liststyle=3
 let g:netrw_banner=1
-let g:netrw_browse_split=0
+let g:netrw_browse_split=2
 let g:netrw_winsize=15
 
 " VimGo {{{2
