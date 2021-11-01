@@ -14,10 +14,13 @@ command! -nargs=* Wrap set wrap linebreak nolist
 set foldcolumn=4
 
 colorscheme desert
-autocmd bufwritepost .vimrc source $MYVIMRC
 
-autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-autocmd FileType Python setlocal ts=4 sts=4 sw=4 expandtab
+if has("autocmd")
+	autocmd bufwritepost .vimrc source $MYVIMRC
+
+	autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+	autocmd FileType Python setlocal ts=4 sts=4 sw=4 expandtab
+endif
 
 " Plugins {{{1
 " NetRW {{{2
@@ -29,10 +32,12 @@ let g:netrw_winsize=15
 " VimGo {{{2
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
-autocmd FileType go nmap <Leader>b <Plug>(go-build)
-autocmd FileType go nmap <Leader>r <Plug>(go-run)
-autocmd FileType go nmap <Leader>t <Plug>(go-test)
-autocmd BufNewFile,BufRead *.go setlocal tabstop=4 shiftwidth=4
+if has("autocmd")
+	autocmd FileType go nmap <Leader>b <Plug>(go-build)
+	autocmd FileType go nmap <Leader>r <Plug>(go-run)
+	autocmd FileType go nmap <Leader>t <Plug>(go-test)
+	autocmd BufNewFile,BufRead *.go setlocal tabstop=4 shiftwidth=4
+endif
 
 " Status Line {{{1
 set laststatus=2
