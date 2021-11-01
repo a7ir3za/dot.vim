@@ -12,7 +12,7 @@ filetype indent plugin on
 set hidden
 command! -nargs=* Wrap set wrap linebreak nolist
 set foldcolumn=4
-
+set ts=2 sts=2 sw=2 noexpandtab "Default Tab/Whitespace"
 colorscheme desert
 
 if has("autocmd")
